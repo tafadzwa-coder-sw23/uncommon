@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rusununguko Students</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body { font-family: Arial, sans-serif; background: #fff; color: #111; margin: 0; }
+        h1 { text-align:center; margin:2rem 0 1.5rem 0; color:#111; }
+        .students-table {
+            width: 100%;
+            margin: 0 auto;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(45,114,217,0.10);
+            overflow: hidden;
+        }
+        .students-table th, .students-table td {
+            padding: 1.1rem 1.2rem;
+            text-align: left;
+            border: none;
+        }
+        .students-table th {
+            background: #2d72d9;
+            color: #fff;
+            font-size: 1.08rem;
+            letter-spacing: 0.5px;
+        }
+        .students-table tr {
+            transition: background 0.18s;
+        }
+        .students-table tr:nth-child(even) td {
+            background: #f3f4f8;
+        }
+        .students-table tr:hover td {
+            background: #e6f0fa;
+        }
+        .students-table td {
+            color: #111;
+            font-size: 1.04rem;
+        }
+        @media (max-width: 700px) {
+            .students-table, .students-table th, .students-table td {
+                font-size: 0.98rem;
+                padding: 0.7rem 0.5rem;
+            }
+        }
+        /* NAV BAR */
+        nav {
+            background: #fff;
+            border-bottom: 1px solid #e0e6ef;
+            padding: 0.7rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        nav a.uncommon-placeholder {
+            text-decoration: none;
+            color: #2d72d9;
+            font-weight: bold;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            margin-left: 2rem;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0 2rem 0 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin-right: 1.5rem;
+        }
+        nav ul li:last-child {
+            margin-right: 0;
+        }
+        nav ul li a {
+            color: #2d72d9;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0.4rem 1.2rem;
+            border-radius: 6px;
+            transition: background 0.18s, color 0.18s;
+        }
+        nav ul li a:hover, nav ul li a.active {
+            background: #2d72d9;
+            color: #fff;
+        }
+        /* FOOTER (Home Page Style) */
+        footer {
+            background: #fff;
+            color: #111;
+            text-align: left;
+            margin-top: 3rem;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            border-top-left-radius: 18px;
+            border-top-right-radius: 18px;
+            box-shadow: 0 -2px 12px rgba(45,114,217,0.07);
+        }
+        footer a {
+            color: #2d72d9;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+        .footer-social-blue {
+            margin-right: 0.7rem;
+            color: #2d72d9;
+            background: #fff;
+            border-radius: 50%;
+            width: 2.3rem;
+            height: 2.3rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+            text-decoration: none;
+            border: 2px solid #2d72d9;
+        }
+        .footer-social-blue:last-child {
+            margin-right: 0;
+        }
+        .footer-social-blue:hover {
+            background: #2d72d9;
+            color: #fff;
+            transform: scale(1.12);
+            border-color: #174ea6;
+        }
+        footer a:hover {
+            text-decoration: underline;
+            color: #174ea6 !important;
+        }
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            nav a.uncommon-placeholder {
+                margin-left: 1rem;
+                margin-bottom: 0.7rem;
+            }
+            nav ul {
+                margin: 0 1rem 0 0;
+            }
+            footer div[style*="display:flex"] {
+                flex-direction: column !important;
+                gap: 1.5rem !important;
+                text-align: left !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="uncommon-placeholder">Uncommon</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="hubs.html">Hubs</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section style="background:#fff; padding:3rem 0 2.5rem 0;">
+            <div style="background:#fff; border-radius:16px; box-shadow:0 4px 24px rgba(45,114,217,0.10); max-width:800px; margin:0 auto; padding:2.5rem 1.5rem;">
+                <h1 style="text-align:center; color:#111; margin-bottom:2rem;">Rusununguko Students</h1>
+                <table class="students-table">
+                    <tr>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Grade</th>
+                    </tr>
+                    <tr>
+                        <td>Tawanda</td>
+                        <td>Chikuni</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>Mitchelle</td>
+                        <td>Moyo</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>Bonde</td>
+                        <td>Chirwa</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>Allan</td>
+                        <td>Mutasa</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>McDonald</td>
+                        <td>Chikomo</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>Elsie</td>
+                        <td>Nyoni</td>
+                        <td>6</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-start; gap:2rem; padding:2rem 1rem;">
+            <div style="min-width:200px;">
+                <div style="font-weight:bold; font-size:1.2rem; margin-bottom:0.5rem; letter-spacing:1px;">
+                    <span style="color:#2d72d9;">Uncommon</span> Scratch Outreach
+                </div>
+                <div style="margin-bottom:0.5rem; color:#111;">
+                    &copy; 2025 All rights reserved.
+                </div>
+                <a href="mailto:info@uncommon.org" style="color:#2d72d9; text-decoration:underline; font-weight:600;">Contact Us</a>
+            </div>
+            <div style="min-width:180px;">
+                <div style="font-weight:600; margin-bottom:0.5rem; color:#111;">Quick Links</div>
+                <a href="index.html" style="color:#2d72d9; text-decoration:none; display:block; margin-bottom:0.2rem; font-weight:600;">Home</a>
+                <a href="hubs.html" style="color:#2d72d9; text-decoration:none; display:block; margin-bottom:0.2rem; font-weight:600;">Hubs</a>
+                <a href="rusununguko.html" style="color:#2d72d9; text-decoration:none; display:block; margin-bottom:0.2rem; font-weight:600;">Rusununguko Hub</a>
+                <a href="about-scratch.html" style="color:#2d72d9; text-decoration:none; display:block; margin-bottom:0.2rem; font-weight:600;">About Scratch</a>
+                <a href="https://playground.uncommon.org/" target="_blank" style="color:#2d72d9; text-decoration:none; display:block; font-weight:600;">Playground</a>
+            </div>
+            <div style="min-width:180px;">
+                <div style="font-weight:600; margin-bottom:0.5rem; color:#111;">Follow Us</div>
+                <div>
+                    <a href="https://facebook.com/" target="_blank" aria-label="Facebook" class="footer-social-blue">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank" aria-label="Twitter" class="footer-social-blue">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com/" target="_blank" aria-label="Instagram" class="footer-social-blue">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <style>
+            .footer-social-blue {
+                margin-right: 0.7rem;
+                color: #2d72d9 !important;
+                background: #fff !important;
+                border-radius: 50%;
+                width: 2.3rem;
+                height: 2.3rem;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.4rem;
+                transition: background 0.2s, color 0.2s, transform 0.2s;
+                text-decoration: none;
+                border: 2px solid #2d72d9;
+            }
+            .footer-social-blue:last-child {
+                margin-right: 0;
+            }
+            .footer-social-blue:hover {
+                background: #2d72d9 !important;
+                color: #fff !important;
+                transform: scale(1.12);
+                border-color: #174ea6 !important;
+            }
+            footer {
+                background: #fff;
+                color: #111;
+                text-align: left;
+                margin-top: 3rem;
+                font-size: 1rem;
+                letter-spacing: 0.5px;
+                border-top-left-radius: 18px;
+                border-top-right-radius: 18px;
+                box-shadow: 0 -2px 12px rgba(45,114,217,0.07);
+            }
+            footer a:hover {
+                text-decoration: underline;
+                color: #174ea6 !important;
+            }
+            @media (max-width: 700px) {
+                footer div[style*="display:flex"] {
+                    flex-direction: column !important;
+                    gap: 1.5rem !important;
+                    text-align: left !important;
+                }
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    </footer>
+</body>
+</html>

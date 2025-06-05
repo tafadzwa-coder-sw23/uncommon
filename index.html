@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uncommon Scratch Outreach</title>
+    <link rel="icon" type="image/jpeg" href="images/logo 2.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background: #fff;
+            color: #111;
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2.5rem;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(45,114,217,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        header nav .uncommon-placeholder {
+            color: #2d72d9;
+            font-weight: bold;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+        header nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        header nav ul li a {
+            color: #2d72d9;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.2s, color 0.2s;
+            padding: 0.2rem 0.7rem;
+            border-radius: 5px;
+        }
+        header nav ul li a.active,
+        header nav ul li a:hover {
+            color: #fff;
+            background: #2d72d9;
+        }
+        .nav-search {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 2rem;
+        }
+        .search-input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .search-input-wrapper .search-icon {
+            position: absolute;
+            left: 14px;
+            color: #2d72d9;
+            opacity: 0.5;
+            font-size: 1.1rem;
+            pointer-events: none;
+        }
+        .nav-search input[type="text"] {
+            padding: 0.5rem 1rem 0.5rem 2.2rem;
+            border: 1.5px solid #2d72d9;
+            border-radius: 20px;
+            outline: none;
+            font-size: 1rem;
+            min-width: 180px;
+            color: #111;
+            background: #fff;
+            transition: border 0.2s;
+        }
+        .nav-search input[type="text"]:focus {
+            border: 1.5px solid #174ea6;
+        }
+        .nav-search input[type="text"]::placeholder {
+            color: #2d72d9;
+            opacity: 0.5;
+            font-style: italic;
+            letter-spacing: 0.5px;
+        }
+        /* Breadcrumb */
+        .breadcrumb {
+            margin: 1.5rem auto 0.5rem auto;
+            max-width: 1200px;
+            font-size: 1rem;
+            color: #174ea6;
+        }
+        .breadcrumb a {
+            color: #2d72d9;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .breadcrumb a:hover {
+            color: #174ea6;
+            text-decoration: underline;
+        }
+        .breadcrumb span {
+            color: #888;
+            margin: 0 0.3rem;
+        }
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 70vh;
+            background: #fff;
+            text-align: center;
+            padding: 3rem 1rem 2rem 1rem;
+            gap: 2.5rem;
+        }
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2d72d9;
+            letter-spacing: 1px;
+        }
+        .hero h2 {
+            font-size: 1.3rem;
+            color: #174ea6;
+            margin-bottom: 2rem;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .cta-button,
+        .btn, a.btn, button, input[type="button"], input[type="submit"], a[style*="background:#2d72d9"], a[style*="background: #2d72d9"] {
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(45,114,217,0.07);
+            background: #2d72d9 !important;
+            color: #fff !important;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .cta-button:hover,
+        .btn:hover, a.btn:hover, button:hover, input[type="button"]:hover, input[type="submit"]:hover, a[style*="background:#2d72d9"]:hover, a[style*="background: #2d72d9"]:hover {
+            background: #174ea6 !important;
+            color: #fff !important;
+        }
+        .cta-button.secondary {
+            background: #fff !important;
+            color: #2d72d9 !important;
+            border: 2px solid #2d72d9;
+        }
+        .cta-button.secondary:hover {
+            background: #2d72d9 !important;
+            color: #fff !important;
+            border-color: #174ea6;
+        }
+        /* Games Section Cards */
+        .games-section {
+            max-width: 1200px;
+            margin: 2.5rem auto 3rem auto;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 2px 16px rgba(45,114,217,0.08);
+            padding: 2rem;
+        }
+        .games-section h2 {
+            color: #2d72d9;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+        .game-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+        .game-card {
+            background: #2d72d9;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 1px 6px rgba(45,114,217,0.06);
+            color: #fff;
+            transition: background 0.2s, transform 0.2s;
+            cursor: pointer;
+        }
+        .game-card h3 {
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        .game-card p {
+            color: #e3eefd;
+        }
+        .game-card:hover {
+            background: #174ea6;
+            transform: translateY(-4px) scale(1.03);
+        }
+        /* About Section */
+        .about-section {
+            max-width:700px;
+            margin:3rem auto 2rem auto;
+            background:#fff;
+            border-radius:14px;
+            box-shadow:0 2px 16px rgba(45,114,217,0.08);
+            padding:2.5rem 2rem;
+            text-align:center;
+        }
+        .about-section h2 {
+            color:#2d72d9;
+            margin-bottom:1.2rem;
+            font-size:2.2rem;
+            letter-spacing: 1px;
+        }
+        .about-section p {
+            color:#111;
+            font-size:1.08rem;
+            margin-bottom:1.2rem;
+            line-height:1.7;
+        }
+        /* Carousel */
+        .carousel-container {
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto 2rem auto;
+            position: relative;
+        }
+        .carousel {
+            width: 100%;
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            background: #e3eefd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .carousel-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            transition: opacity 0.7s;
+            z-index: 1;
+        }
+        .carousel-image.active {
+            opacity: 1;
+            z-index: 2;
+        }
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 0.7rem;
+        }
+        .carousel-dots .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #2d72d9;
+            opacity: 0.3;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .carousel-dots .dot.active {
+            opacity: 1;
+            background: #174ea6;
+        }
+        /* Footer */
+        footer {
+            background: #fff;
+            color: #111;
+            text-align: left;
+            margin-top: 3rem;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            border-top-left-radius: 18px;
+            border-top-right-radius: 18px;
+            box-shadow: 0 -2px 12px rgba(45,114,217,0.07);
+        }
+        footer a {
+            color: #2d72d9;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+        footer a:hover {
+            text-decoration: underline;
+            color: #174ea6 !important;
+        }
+        .footer-social-blue {
+            margin-right: 0.7rem;
+            color: #2d72d9;
+            background: #fff;
+            border-radius: 50%;
+            width: 2.3rem;
+            height: 2.3rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+            text-decoration: none;
+            border: 2px solid #2d72d9;
+        }
+        .footer-social-blue:last-child {
+            margin-right: 0;
+        }
+        .footer-social-blue:hover {
+            background: #2d72d9;
+            color: #fff;
+            transform: scale(1.12);
+            border-color: #174ea6;
+        }
+        @media (max-width: 700px) {
+            footer div[style*="display:flex"] {
+                flex-direction: column !important;
+                gap: 1.5rem !important;
+                text-align: left !important;
+            }
+        }
+        /* Responsive */
+        @media (max-width: 900px) {
+            .games-section, .about-section {
+                padding: 1.2rem 0.5rem;
+            }
+        }
+        @media (max-width: 700px) {
+            .nav-search {
+                margin: 0 0.5rem;
+            }
+            .nav-search input[type="text"] {
+                min-width: 90px;
+                font-size: 0.95rem;
+            }
+            .hero {
+                padding: 2rem 0.5rem 1rem 0.5rem;
+                gap: 1.5rem;
+            }
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            .hero h2 {
+                font-size: 1.05rem;
+            }
+            .games-section h2, .about-section h2 {
+                font-size: 1.3rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .carousel-container, .carousel, .carousel-image {
+                max-width: 98vw;
+                height: 160px;
+            }
+            .breadcrumb {
+                font-size: 0.95rem;
+                padding-left: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="uncommon-placeholder">Uncommon</a>
+            <form class="nav-search" action="hubs.html" method="get">
+                <div class="search-input-wrapper">
+                    <span class="search-icon">&#128269;</span>
+                    <input type="text" placeholder="Search hubs" name="q" />
+                </div>
+            </form>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="hubs.html">Hubs</a></li>
+            </ul>
+        </nav>
+    </header>
+    <nav class="breadcrumb" aria-label="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>&gt;</span>
+        <span style="color:#174ea6;font-weight:bold;">Welcome</span>
+    </nav>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>
+                    Empowering Students Through Coding
+                </h1>
+                <h2>Discover the Power of Scratch Programming</h2>
+                <div class="hero-buttons">
+                    <a href="hubs.html" class="cta-button">Explore Hubs</a>
+                    <a href="about-scratch.html" class="cta-button secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <img src="images/kids cards pic.png" alt="Kids Cards" class="carousel-image active">
+                    <img src="images/kids games.png" alt="Kids Games" class="carousel-image">
+                    <img src="images/kkids picsd.png" alt="Kids Pic SD" class="carousel-image">
+                    <img src="images/pic of kids .png" alt="Pic of Kids" class="carousel-image">
+                    <img src="images/pic of kids on pc.png" alt="Kids on PC" class="carousel-image">
+                    <img src="images/pics ht.png" alt="Pics HT" class="carousel-image">
+                    <img src="images/pics of hhame.png" alt="Pics of Game" class="carousel-image">
+                </div>
+                <div class="carousel-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Playground Uncommon Section -->
+    <section class="about-section">
+        <h2>Playground Uncommon</h2>
+        <p>
+            Playground Uncommon is our online platform where you can create, code, and share your own Scratch games right from your browser. No installation needed—just open the playground and start building interactive stories, games, and animations using Scratch blocks. It's a fun and easy way to learn programming and unleash your creativity online!
+        </p>
+        <a href="https://playground.uncommon.org/" target="_blank" class="cta-button" style="margin-top:1rem;">
+            Create Scratch Games Online
+        </a>
+    </section>
+    <!-- Games Section -->
+    <section class="games-section">
+        <h2>Uncommon Scratch Games</h2>
+        <div class="game-cards">
+            <div class="game-card">
+                <h3>Change Cat Size</h3>
+                <p>Make the Scratch cat grow and shrink with code!</p>
+            </div>
+            <div class="game-card">
+                <h3>Fly Cat</h3>
+                <p>Help the cat fly across the stage using your own scripts.</p>
+            </div>
+            <div class="game-card">
+                <h3>Apple Catcher</h3>
+                <p>Catch falling apples and score points in this fun game.</p>
+            </div>
+            <div class="game-card">
+                <h3>Hunger Shark</h3>
+                <p>Guide the shark to eat fish and avoid obstacles!</p>
+            </div>
+            <div class="game-card">
+                <h3>Ghost Busters</h3>
+                <p>Chase and catch ghosts before time runs out.</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-start; gap:2rem; padding:2rem 1rem;">
+            <div style="min-width:200px;">
+                <div style="font-weight:bold; font-size:1.2rem; margin-bottom:0.5rem; letter-spacing:1px;">
+                    <span style="color:#2d72d9;">Uncommon</span> Scratch Outreach
+                </div>
+                <div style="margin-bottom:0.5rem; color:#111;">
+                    &copy; 2025 All rights reserved.
+                </div>
+                <a href="mailto:info@uncommon.org" style="color:#2d72d9;text-decoration:underline;">Contact Us</a>
+            </div>
+            <div style="min-width:180px;">
+                <div style="font-weight:600; margin-bottom:0.5rem; color:#111;">Quick Links</div>
+                <a href="index.html" style="color:#2d72d9; text-decoration:none; display:block; margin-bottom:0.2rem; font-weight:600;">Home</a>
+                <a href="hubs.html" style="color:#2d72d9; text-decoration:none; display:block; margin-bottom:0.2rem; font-weight:600;">Hubs</a>
+                <a href="about-scratch.html" style="color:#2d72d9; text-decoration:none; display:block; margin-bottom:0.2rem; font-weight:600;">About Scratch</a>
+                <a href="https://playground.uncommon.org/" target="_blank" style="color:#2d72d9; text-decoration:none; display:block; font-weight:600;">Playground</a>
+            </div>
+            <div style="min-width:180px;">
+                <div style="font-weight:600; margin-bottom:0.5rem; color:#111;">Follow Us</div>
+                <div>
+                    <a href="https://facebook.com/" target="_blank" aria-label="Facebook" class="footer-social-blue">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank" aria-label="Twitter" class="footer-social-blue">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com/" target="_blank" aria-label="Instagram" class="footer-social-blue">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    </footer>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const images = document.querySelectorAll('.carousel-image');
+    const dots = document.querySelectorAll('.carousel-dots .dot');
+    let current = 0;
+    function showSlide(idx) {
+        images.forEach((img, i) => {
+            img.classList.toggle('active', i === idx);
+            dots[i].classList.toggle('active', i === idx);
+        });
+        current = idx;
+    }
+    function nextSlide() {
+        showSlide((current + 1) % images.length);
+    }
+    let interval = setInterval(nextSlide, 3000);
+    dots.forEach((dot, idx) => {
+        dot.addEventListener('click', () => {
+            showSlide(idx);
+            clearInterval(interval);
+            interval = setInterval(nextSlide, 3000);
+        });
+    });
+});
+</script>
+</body>
+</html>

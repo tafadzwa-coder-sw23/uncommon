@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uncommon Scratch Outreach - Scratch Programming</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="logo">
+                <h1>Uncommon</h1>
+                <h2>Scratch Outreach</h2>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="scratch.html" class="active">Scratch</a></li>
+                <li><a href="hubs.html">Hubs</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="stories.html">Stories</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="scratch-section">
+            <div class="section-header">
+                <h2>What is Scratch?</h2>
+                <p>Discover the world of visual programming</p>
+            </div>
+            <div class="scratch-container">
+                <div class="scratch-intro">
+                    <h3>Visual Programming for Everyone</h3>
+                    <p>Scratch is a block-based visual programming language designed for beginners. It makes coding easy and fun by using colorful blocks instead of complex syntax.</p>
+                    <ul class="scratch-features">
+                        <li><i class="fas fa-code"></i> Drag-and-drop programming</li>
+                        <li><i class="fas fa-gamepad"></i> Create games and animations</li>
+                        <li><i class="fas fa-share-alt"></i> Share and collaborate</li>
+                        <li><i class="fas fa-graduation-cap"></i> Learn programming concepts</li>
+                    </ul>
+                </div>
+                <div class="scratch-preview">
+                    <img src="https://scratch.mit.edu/images/scratch-logo.png" alt="Scratch Logo" class="scratch-logo">
+                    <div class="scratch-code-example">
+                        <img src="https://scratch.mit.edu/images/block-sample.png" alt="Scratch Code Example">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="scratch-benefits">
+            <div class="section-header">
+                <h2>Why Choose Scratch?</h2>
+                <p>Key benefits of learning with Scratch</p>
+            </div>
+            <div class="benefits-container">
+                <div class="benefit-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Develops Critical Thinking</h3>
+                    <p>Scratch helps students develop problem-solving and logical thinking skills through interactive programming.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Community Support</h3>
+                    <p>Join a global community of learners and share projects with millions of other Scratch users.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Foundation for Future Learning</h3>
+                    <p>Scratch provides a solid foundation for learning more advanced programming languages later.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="scratch-get-started">
+            <div class="section-header">
+                <h2>Get Started with Scratch</h2>
+                <p>Begin your coding journey today</p>
+            </div>
+            <div class="get-started-container">
+                <div class="step-card">
+                    <i class="fas fa-1"></i>
+                    <h3>Create an Account</h3>
+                    <p>Sign up for a free Scratch account to start creating and sharing your projects.</p>
+                    <a href="https://scratch.mit.edu/join" class="cta-button secondary">Join Scratch</a>
+                </div>
+                <div class="step-card">
+                    <i class="fas fa-2"></i>
+                    <h3>Choose a Project</h3>
+                    <p>Start with one of our beginner-friendly projects or create your own from scratch.</p>
+                    <a href="programs.html" class="cta-button secondary">View Projects</a>
+                </div>
+                <div class="step-card">
+                    <i class="fas fa-3"></i>
+                    <h3>Join a Hub</h3>
+                    <p>Find a nearby learning hub to get hands-on support and guidance from our instructors.</p>
+                    <a href="hubs.html" class="cta-button secondary">Find a Hub</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.querySelector('.mobile-menu').addEventListener('click', () => {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mufakosi Primary School</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            background: #1B1F3B; /* Deep blue background */
+            color: #fff;
+        }
+        header {
+            background: #16204d;
+            color: #FFD600;
+            padding: 1rem 0;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li a {
+            color: #FFD600;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #fff;
+            border-bottom: 2px solid #FFD600;
+        }
+        main {
+            max-width: 700px;
+            margin: 2rem auto;
+            background: #22306b; /* Lighter blue for content */
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(27,31,59,0.18);
+            padding: 2rem 2.5rem;
+        }
+        h1 {
+            color: #FFD600;
+            margin-bottom: 1.5rem;
+        }
+        h2 {
+            color: #FFD600;
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        ul {
+            padding-left: 1.2rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+            background: #1B1F3B;
+        }
+        th, td {
+            border: 1px solid #2d3e7b;
+            padding: 0.7rem;
+            text-align: left;
+        }
+        th {
+            background: #22306b;
+            color: #FFD600;
+        }
+        tr:nth-child(even) td {
+            background: #22306b;
+        }
+        tr:nth-child(odd) td {
+            background: #1B1F3B;
+        }
+        li {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="hubs.html">Hubs</a></li>
+                <li><a href="mufakosi.html" class="active">Mufakosi Hub</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Mufakosi Primary School</h1>
+        <h2>Instructors</h2>
+        <ul>
+            <li>Jane Doe</li>
+            <li>John Smith</li>
+        </ul>
+        <h2>Timetable</h2>
+        <table>
+            <tr><th>Day</th><th>Time</th><th>Lesson</th></tr>
+            <tr><td>Monday</td><td>10:00</td><td>Scratch Basics</td></tr>
+            <tr><td>Wednesday</td><td>11:00</td><td>Game Design</td></tr>
+        </table>
+        <h2>Lessons</h2>
+        <ul>
+            <li>Scratch Basics</li>
+            <li>Game Design</li>
+            <li>Animation with Scratch</li>
+        </ul>
+    </main>
+</body>
+</html>

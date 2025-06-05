@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Warren Park Hub Schools</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .school-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; padding: 2rem 0; }
+        .school-card { background: #fff; border-radius: 12px; box-shadow: 0 2px 16px rgba(0,0,0,0.08); padding: 1.5rem; text-align: center; transition: box-shadow 0.2s; }
+        .school-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.14); }
+        .school-card img { width: 64px; height: 64px; object-fit: cover; border-radius: 50%; margin-bottom: 1rem; }
+        .school-card h3 { margin: 0.5rem 0 0.25rem 0; font-size: 1.2rem; }
+        .school-card p { color: #555; font-size: 0.95rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="hubs.html">Hubs</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="school-hubs">
+            <h1 style="text-align:center;">Warren Park Hub Schools</h1>
+            <div class="school-cards">
+                <div class="school-card">
+                    <img src="images/school3.png" alt="Warren Park Primary Logo" onerror="this.onerror=null;this.src='https://via.placeholder.com/64';">
+                    <h3>Warren Park Primary School</h3>
+                    <p>Fun and engaging Scratch activities for primary learners.</p>
+                </div>
+                <div class="school-card">
+                    <img src="images/school4.png" alt="Warren Park High Logo" onerror="this.onerror=null;this.src='https://via.placeholder.com/64';">
+                    <h3>Warren Park High School</h3>
+                    <p>Mentorship and coding competitions for high school students.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

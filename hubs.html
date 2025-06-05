@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Hubs</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background: #fff;
+            color: #111;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+        }
+        .school-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+        .school-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+            padding: 1.5rem;
+            text-align: center;
+            transition: box-shadow 0.2s;
+        }
+        .school-card:hover {
+            box-shadow: 0 4px 24px rgba(0,0,0,0.14);
+        }
+        .school-card img {
+            width: 64px;
+            height: 64px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+        .school-card h3 {
+            margin: 0.5rem 0 0.25rem 0;
+            font-size: 1.2rem;
+            color: #2d72d9;
+        }
+        .school-card p {
+            color: #111;
+            font-size: 0.95rem;
+        }
+        .card-btn {
+            margin-top: 1rem;
+            display: inline-block;
+            background: #2d72d9;
+            color: #fff !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+            border: none;
+        }
+        .card-btn:hover {
+            background: #174ea6;
+            color: #fff !important;
+        }
+        header {
+            background: #fff;
+            color: #111;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            background: #fff;
+        }
+        nav a.uncommon-placeholder {
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: #2d72d9;
+            font-weight: bold;
+        }
+        .nav-search input[type="text"] {
+            border: 1.5px solid #2d72d9;
+            border-radius: 20px;
+            font-size: 1rem;
+            outline: none;
+            background: #f8fafc;
+            color: #111;
+            transition: border 0.2s;
+        }
+        .nav-search .search-icon {
+            color: #2d72d9;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li a {
+            color: #2d72d9;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border-radius: 6px;
+            padding: 0.4rem 1.2rem;
+            transition: background 0.18s, color 0.18s;
+        }
+        nav ul li a.active,
+        nav ul li a:hover {
+            background: #2d72d9;
+            color: #fff !important;
+        }
+        .school-hubs {
+            background: #fff !important;
+            padding: 3rem 0 2.5rem 0;
+        }
+        .school-hubs h1 {
+            text-align: center;
+            color: #2d72d9;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 2.5rem;
+            letter-spacing: 1px;
+        }
+        footer {
+            background: #fff;
+            color: #111;
+            text-align: left;
+            margin-top: 3rem;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            border-top-left-radius: 18px;
+            border-top-right-radius: 18px;
+            box-shadow: 0 -2px 12px rgba(45,114,217,0.07);
+        }
+        footer a {
+            color: #2d72d9;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+        footer a:hover {
+            text-decoration: underline;
+            color: #174ea6 !important;
+        }
+        .footer-social-blue {
+            margin-right: 0.7rem;
+            color: #2d72d9 !important;
+            background: #fff !important;
+            border-radius: 50%;
+            width: 2.3rem;
+            height: 2.3rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+            text-decoration: none;
+            border: 2px solid #2d72d9;
+        }
+        .footer-social-blue:last-child {
+            margin-right: 0;
+        }
+        .footer-social-blue:hover {
+            background: #2d72d9 !important;
+            color: #fff !important;
+            transform: scale(1.12);
+            border-color: #174ea6 !important;
+        }
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            nav a.uncommon-placeholder {
+                margin-left: 1rem;
+                margin-bottom: 0.7rem;
+            }
+            nav ul {
+                margin: 0 1rem 0 0;
+            }
+            footer div[style*="display:flex"] {
+                flex-direction: column !important;
+                gap: 1.5rem !important;
+                text-align: left !important;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="uncommon-placeholder">Uncommon</a>
+            <form class="nav-search" action="hubs.html" method="get" style="margin: 0 1.5rem; flex: 1; max-width: 320px;">
+                <div class="search-input-wrapper" style="position: relative;">
+                    <span class="search-icon" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%);">&#128269;</span>
+                    <input
+                        type="text"
+                        placeholder="Search hubs"
+                        name="q"
+                        style="width: 100%; padding: 0.55rem 1rem 0.55rem 2.2rem;"
+                        value=""
+                    />
+                </div>
+            </form>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="hubs.html">Hubs</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="school-hubs">
+            <h1 style="max-width:1200px; margin:0 auto 2.5rem auto; text-align:center; color:#2d72d9; font-size:2.5rem; font-weight:800; letter-spacing:1px;">
+                Our Hubs
+            </h1>
+            <div class="school-cards" style="max-width:1200px; margin:0 auto;">
+                <div class="school-card">
+                    <img src="images/mufakosi hub.png" alt="Mufakosi Hub Logo" onerror="this.onerror=null;this.src='https://via.placeholder.com/64';">
+                    <h3>Mufakosi Hub</h3>
+                    <p>Empowering youth in Mufakosi with creative coding and Scratch workshops.</p>
+                    <a href="mufakosi.html" class="card-btn">View Details</a>
+                </div>
+                <div class="school-card">
+                    <img src="images/warren park hub.png" alt="Warren Park Hub Logo" onerror="this.onerror=null;this.src='https://via.placeholder.com/64';">
+                    <h3>Warren Park Hub</h3>
+                    <p>Weekly Scratch sessions and mentorship for all ages in Warren Park.</p>
+                    <a href="warrenpark.html" class="card-btn">View Details</a>
+                </div>
+                <div class="school-card">
+                    <img src="images/dzivarasekwa hub.png" alt="Dzivarasekwa Hub Logo" onerror="this.onerror=null;this.src='https://via.placeholder.com/64';">
+                    <h3>Dzivarasekwa Hub</h3>
+                    <p>Hands-on Scratch projects and fun coding competitions for Dzivarasekwa students.</p>
+                    <a href="dzivarasekwa.html" class="card-btn">View Details</a>
+                </div>
+                <div class="school-card">
+                    <img src="images/mbare hub log2.png" alt="Mbare Hub Logo" onerror="this.onerror=null;this.src='https://via.placeholder.com/64';">
+                    <h3>Mbare Hub</h3>
+                    <p>Engaging students in Mbare with fun Scratch coding activities and digital skills workshops.</p>
+                    <a href="mbare.html" class="card-btn">View Details</a>
+                </div>
+                <div class="school-card">
+                    <img src="images/vic fall hub .png" alt="Vic Falls Hub Logo" onerror="this.onerror=null;this.src='https://via.placeholder.com/64';">
+                    <h3>Vic Falls Hub</h3>
+                    <p>Creative coding and Scratch learning for students in Victoria Falls.</p>
+                    <a href="vicfalls.html" class="card-btn">View Details</a>
+                </div>
+                <div class="school-card">
+                    <img src="images/bulawayo loghub.png" alt="Bulawayo Hub Logo" onerror="this.onerror=null;this.src='https://via.placeholder.com/64';">
+                    <h3>Bulawayo Hub</h3>
+                    <p>Building digital skills and coding confidence for youth in Bulawayo.</p>
+                    <a href="bulawayo.html" class="card-btn">View Details</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-start; gap:2rem; padding:2rem 1rem;">
+            <div style="min-width:200px;">
+                <div style="font-weight:bold; font-size:1.2rem; margin-bottom:0.5rem; letter-spacing:1px;">
+                    <span style="color:#2d72d9;">Uncommon</span> Scratch Outreach
+                </div>
+                <div style="margin-bottom:0.5rem; color:#111;">
+                    &copy; 2025 All rights reserved.
+                </div>
+                <a href="mailto:info@uncommon.org" style="color:#2d72d9;text-decoration:underline;">Contact Us</a>
+            </div>
+            <div style="min-width:180px;">
+                <div style="font-weight:600; margin-bottom:0.5rem; color:#111;">Quick Links</div>
+                <a href="index.html" style="color:#2d72d9; text-decoration:none; display:block; margin-bottom:0.2rem; font-weight:600;">Home</a>
+                <a href="hubs.html" style="color:#2d72d9; text-decoration:none; display:block; margin-bottom:0.2rem; font-weight:600;">Hubs</a>
+                <a href="about-scratch.html" style="color:#2d72d9; text-decoration:none; display:block; margin-bottom:0.2rem; font-weight:600;">About Scratch</a>
+                <a href="https://playground.uncommon.org/" target="_blank" style="color:#2d72d9; text-decoration:none; display:block; font-weight:600;">Playground</a>
+            </div>
+            <div style="min-width:180px;">
+                <div style="font-weight:600; margin-bottom:0.5rem; color:#111;">Follow Us</div>
+                <div>
+                    <a href="https://facebook.com/" target="_blank" aria-label="Facebook" class="footer-social-blue">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank" aria-label="Twitter" class="footer-social-blue">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com/" target="_blank" aria-label="Instagram" class="footer-social-blue">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Get the search query from the URL
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get('q');
+    if (query) {
+        const cards = document.querySelectorAll('.school-card');
+        let found = false;
+        cards.forEach(card => {
+            const name = card.querySelector('h3').textContent.toLowerCase();
+            if (name.includes(query.toLowerCase())) {
+                card.style.display = '';
+                found = true;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+        // Optionally, show a message if nothing is found
+        if (!found) {
+            const container = document.querySelector('.school-cards');
+            const msg = document.createElement('div');
+            msg.textContent = "No hubs found for: " + query;
+            msg.style.color = "#2d72d9";
+            msg.style.fontWeight = "bold";
+            msg.style.margin = "2rem auto";
+            container.appendChild(msg);
+        }
+    }
+});
+</script>
+</body>
+</html>

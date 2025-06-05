@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uncommon Scratch Outreach - Contact Us</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="logo">
+                <h1>Uncommon</h1>
+                <h2>Scratch Outreach</h2>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="scratch.html">Scratch</a></li>
+                <li><a href="hubs.html">Hubs</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="stories.html">Stories</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <div class="contact-form-container">
+                    <p>Have questions, want to volunteer, or explore partnership opportunities? Reach out to us using the form below!</p>
+                    <form id="contactForm">
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="email">Your Email:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="subject">Subject:</label>
+                        <input type="text" id="subject" name="subject" required>
+
+                        <label for="message">Your Message:</label>
+                        <textarea id="message" name="message" required></textarea>
+
+                        <button type="submit">Send Message</button>
+                    </form>
+                    <div id="formMessage" class="form-message"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Uncommon Scratch Outreach is dedicated to providing accessible coding education through Scratch programming. We believe in empowering students to become creators and problem solvers in the digital age.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="scratch.html">Scratch</a></li>
+                    <li><a href="hubs.html">Hubs</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="stories.html">Success Stories</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@uncommonscratch.org</p>
+                <p>Phone: (555) 123-4567</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Uncommon Scratch Outreach. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.mobile-menu').addEventListener('click', () => {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formMessage = document.getElementById('formMessage');
+            formMessage.style.display = 'none';
+            formMessage.classList.remove('success', 'error');
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (name === "" || email === "" || message === "") {
+                formMessage.textContent = "Please fill in all fields.";
+                formMessage.classList.add('error');
+                formMessage.style.display = 'block';
+                return;
+            }
+
+            // Simulate form submission
+            setTimeout(() => {
+                formMessage.textContent = `Thank you, ${name}! Your message has been sent.`;
+                formMessage.classList.add('success');
+                formMessage.style.display = 'block';
+                document.getElementById('contactForm').reset();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uncommon Scratch Outreach - School Details</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="logo">
+                <h1>Uncommon</h1>
+                <h2>Scratch Outreach</h2>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="scratch.html">Scratch</a></li>
+                <li><a href="hubs.html" class="active">Hubs</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="stories.html">Stories</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="school-details" class="school-detail-section">
+            <div class="container">
+                <h2 id="school-name"></h2>
+                <p id="school-location-hub"></p>
+
+                <div class="school-info-grid">
+                    <div class="info-card timetable">
+                        <h3>Scratch Lesson Timetable</h3>
+                        <table id="timetable-table">
+                            <thead>
+                                <tr>
+                                    <th>Day</th>
+                                    <th>Time</th>
+                                    <th>Topic</th>
+                                    <th>Instructor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                </tbody>
+                        </table>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Instructors</h3>
+                        <ul id="instructors-list">
+                            </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Students</h3>
+                        <ul id="students-list">
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Uncommon Scratch Outreach is dedicated to providing accessible coding education through Scratch programming. We believe in empowering students to become creators and problem solvers in the digital age.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="scratch.html">Scratch</a></li>
+                    <li><a href="hubs.html">Hubs</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="stories.html">Success Stories</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@uncommonscratch.org</p>
+                <p>Phone: (555) 123-4567</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Uncommon Scratch Outreach. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.mobile-menu').addEventListener('click', () => {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const hubName = urlParams.get('hub');
+            const schoolName = decodeURIComponent(urlParams.get('school'));
+
+            const schoolNameElement = document.getElementById('school-name');
+            const schoolLocationHubElement = document.getElementById('school-location-hub');
+            const timetableTableBody = document.querySelector('#timetable-table tbody');
+            const instructorsList = document.getElementById('instructors-list');
+            const studentsList = document.getElementById('students-list');
+
+            if (schoolName) {
+                schoolNameElement.textContent = `${schoolName}`;
+                schoolLocationHubElement.textContent = `(Part of ${hubName} Hub)`;
+
+                const schoolData = {
+                    "Gwinyiro Primary": {
+                        timetable: [
+                            { day: "Monday", time: "2:00 PM - 3:30 PM", topic: "Introduction to Blocks", instructor: "Mr. Sibanda" },
+                            { day: "Wednesday", time: "2:00 PM - 3:30 PM", topic: "Sprites and Backdrops", instructor: "Ms. Moyo" }
+                        ],
+                        instructors: ["Mr. Sibanda", "Ms. Moyo", "Mrs. Ndlovu"],
+                        students: [
+                            "Tapiwa Ncube", "Ruvimbo Dube", "Tendai Banda", "Kudakwashe Shumba",
+                            "Tinashe Moyo", "Nokutenda Sibanda", "Anesu Zulu", "Chengetai Mutasa"
+                        ]
+                    },
+                    "Aspindale Primary": {
+                        timetable: [
+                            { day: "Tuesday", time: "3:00 PM - 4:30 PM", topic: "Motion and Events", instructor: "Mr. Dlamini" },
+                            { day: "Thursday", time: "3:00 PM - 4:30 PM", topic: "Loops and Conditionals", instructor: "Ms. Mhlanga" }
+                        ],
+                        instructors: ["Mr. Dlamini", "Ms. Mhlanga"],
+                        students: [
+                            "Panashe Gumbo", "Shamiso Nkomo", "Blessing Ngwenya", "Sipho Khumalo",
+                            "Thandeka Ncube", "Takunda Marufu"
+                        ]
+                    },
+                    "Mufakose 1 High School": {
+                        timetable: [
+                            { day: "Monday", time: "4:00 PM - 5:30 PM", topic: "Variables and Operators", instructor: "Mr. Makoni" },
+                            { day: "Wednesday", time: "4:00 PM - 5:30 PM", topic: "Game Development Basics", instructor: "Mrs. Charamba" }
+                        ],
+                        instructors: ["Mr. Makoni", "Mrs. Charamba"],
+                        students: [
+                            "Tatenda Chivasa", "Rutendo Nyoni", "Takudzwa Mutsau", "Tafadzwa Chigudu",
+                            "Paidamoyo Gwata", "Farai Masimba"
+                        ]
+                    },
+                    "George Stark Primary": {
+                        timetable: [
+                            { day: "Monday", time: "2:30 PM - 4:00 PM", topic: "First Projects in Scratch", instructor: "Mr. Chibanda" },
+                            { day: "Thursday", time: "2:30 PM - 4:00 PM", topic: "Storytelling with Scratch", instructor: "Ms. Sithole" }
+                        ],
+                        instructors: ["Mr. Chibanda", "Ms. Sithole"],
+                        students: [
+                            "Ashley Nkomo", "Blessing Dube", "Clive Nyathi", "Danai Sibanda",
+                            "Emmanuel Zhou", "Fadzai Gava"
+                        ]
+                    },
+                    "Stodart Primary": {
+                        timetable: [
+                            { day: "Tuesday", time: "2:00 PM - 3:30 PM", topic: "Creating Animations", instructor: "Mr. Ndlovu" },
+                            { day: "Friday", time: "2:00 PM - 3:30 PM", topic: "Interactive Art", instructor: "Ms. Ncube" }
+                        ],
+                        instructors: ["Mr. Ndlovu", "Ms. Ncube"],
+                        students: [
+                            "Grace Hove", "Innocent Banda", "John Mupfumi", "Karen Moyo",
+                            "Linda Dube", "Michael Sibanda"
+                        ]
+                    },
+                    "Dzivarasekwa 1 Primary": {
+                        timetable: [
+                            { day: "Monday", time: "2:00 PM - 3:30 PM", topic: "Introduction to Coding Concepts", instructor: "Mr. Gumbo" },
+                            { day: "Wednesday", time: "2:00 PM - 3:30 PM", topic: "Basic Game Design", instructor: "Ms. Maseko" }
+                        ],
+                        instructors: ["Mr. Gumbo", "Ms. Maseko"],
+                        students: [
+                            "Nigel Nyoni", "Olivia Mufudzi", "Peter Shumba", "Queen Dube",
+                            "Ronald Mutasa", "Sandra Musuwo"
+                        ]
+                    },
+                    "Dzivarasekwa 2 Primary": {
+                        timetable: [
+                            { day: "Tuesday", time: "2:30 PM - 4:00 PM", topic: "Advanced Sprite Control", instructor: "Mr. Nyathi" },
+                            { day: "Thursday", time: "2:30 PM - 4:00 PM", topic: "Debugging and Problem Solving", instructor: "Ms. Chakanyuka" }
+                        ],
+                        instructors: ["Mr. Nyathi", "Ms. Chakanyuka"],
+                        students: [
+                            "Timothy Ndlovu", "Ursula Banda", "Victor Moyo", "Wendy Sithole",
+                            "Xolani Ncube", "Yvonne Dube"
+                        ]
+                    },
+                    "Kuwadzana 1 Primary": {
+                        timetable: [
+                            { day: "Monday", time: "2:00 PM - 3:30 PM", topic: "Scratch Basics", instructor: "Mr. Shumba" },
+                            { day: "Thursday", time: "2:00 PM - 3:30 PM", topic: "Interactive Stories", instructor: "Ms. Manyere" }
+                        ],
+                        instructors: ["Mr. Shumba", "Ms. Manyere"],
+                        students: [
+                            "Zoe Banda", "Amanda Ndlovu", "Brenda Moyo", "Carlos Dube",
+                            "David Sibanda", "Emily Mutasa"
+                        ]
+                    },
+                    "Kuwadzana High School": {
+                        timetable: [
+                            { day: "Tuesday", time: "4:00 PM - 5:30 PM", topic: "Advanced Game Mechanics", instructor: "Mr. Takawira" },
+                            { day: "Friday", time: "4:00 PM - 5:30 PM", topic: "Creating Complex Projects", instructor: "Mrs. Mushonga" }
+                        ],
+                        instructors: ["Mr. Takawira", "Mrs. Mushonga"],
+                        students: [
+                            "Frank Makoni", "Grace Sithole", "Harry Chigudu", "Ivy Nyoni",
+                            "Jack Mutsau", "Kelly Gwata"
+                        ]
+                    },
+                    "Mzilikazi Primary": {
+                        timetable: [
+                            { day: "Monday", time: "2:30 PM - 4:00 PM", topic: "Discovering Scratch", instructor: "Ms. Zulu" },
+                            { day: "Wednesday", time: "2:30 PM - 4:00 PM", topic: "Building Simple Games", instructor: "Mr. Ndlovu" }
+                        ],
+                        instructors: ["Ms. Zulu", "Mr. Ndlovu"],
+                        students: [
+                            "Liam Dube", "Mia Sibanda", "Noah Banda", "Olga Moyo",
+                            "Pauline Ncube", "Quincy Dube"
+                        ]
+                    },
+                    "Induba Primary": {
+                        timetable: [
+                            { day: "Tuesday", time: "2:00 PM - 3:30 PM", topic: "Animation and Music", instructor: "Mr. Gumede" },
+                            { day: "Thursday", time: "2:00 PM - 3:30 PM", topic: "Creative Coding Challenges", instructor: "Ms. Sithole" }
+                        ],
+                        instructors: ["Mr. Gumede", "Ms. Sithole"],
+                        students: [
+                            "Rosemary Nkomo", "Samson Marufu", "Tina Chivasa", "Ushe Dube",
+                            "Violet Sibanda", "Walter Ncube"
+                        ]
+                    }
+                };
+
+                const currentSchoolData = schoolData[schoolName];
+
+                if (currentSchoolData) {
+                    currentSchoolData.timetable.forEach(lesson => {
+                        const row = timetableTableBody.insertRow();
+                        row.innerHTML = `
+                            <td>${lesson.day}</td>
+                            <td>${lesson.time}</td>
+                            <td>${lesson.topic}</td>
+                            <td>${lesson.instructor}</td>
+                        `;
+                    });
+
+                    currentSchoolData.instructors.forEach(instructor => {
+                        const listItem = document.createElement('li');
+                        listItem.innerHTML = `<i class="fas fa-chalkboard-teacher"></i> ${instructor}`;
+                        instructorsList.appendChild(listItem);
+                    });
+
+                    currentSchoolData.students.forEach(student => {
+                        const listItem = document.createElement('li');
+                        listItem.innerHTML = `<i class="fas fa-user-graduate"></i> ${student}`;
+                        studentsList.appendChild(listItem);
+                    });
+                } else {
+                    schoolNameElement.textContent = "School Not Found";
+                    schoolLocationHubElement.textContent = "";
+                    timetableTableBody.innerHTML = '<tr><td colspan="4">No data available for this school.</td></tr>';
+                    instructorsList.innerHTML = '<li>No instructors listed.</li>';
+                    studentsList.innerHTML = '<li>No students listed.</li>';
+                }
+
+            } else {
+                schoolNameElement.textContent = "School Details Not Found";
+                schoolLocationHubElement.textContent = "Please select a school from a hub.";
+            }
+        });
+    </script>
+</body>
+</html>

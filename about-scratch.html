@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Scratch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fff;
+            color: #111;
+        }
+        .hero-section {
+            background-color: #2d72d9;
+        }
+        .hero-section h1, .hero-section h2, .hero-section p, .hero-section li {
+            color: #fff;
+        }
+        .hero-section h2 {
+            color: #FFD600;
+        }
+        .hero-section .cta-button {
+            background-color: #2d72d9;
+            color: #fff;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .hero-section .cta-button:hover {
+            background-color: #174ea6;
+            color: #fff;
+        }
+        .header-nav {
+            background-color: #fff;
+        }
+        .header-nav .logo-text {
+            color: #2d72d9;
+        }
+        .header-nav a {
+            color: #2d72d9;
+        }
+        .header-nav a:hover {
+            color: #174ea6;
+        }
+        /* Footer styles */
+        footer {
+            background: #fff;
+            color: #111;
+            text-align: left;
+            margin-top: 3rem;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            border-top-left-radius: 18px;
+            border-top-right-radius: 18px;
+            box-shadow: 0 -2px 12px rgba(45,114,217,0.07);
+        }
+        footer a {
+            color: #2d72d9;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+        footer a:hover {
+            text-decoration: underline;
+            color: #174ea6 !important;
+        }
+        .footer-social-blue {
+            margin-right: 0.7rem;
+            color: #2d72d9 !important;
+            background: #fff !important;
+            border-radius: 50%;
+            width: 2.3rem;
+            height: 2.3rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+            text-decoration: none;
+            border: 2px solid #2d72d9;
+        }
+        .footer-social-blue:last-child {
+            margin-right: 0;
+        }
+        .footer-social-blue:hover {
+            background: #2d72d9 !important;
+            color: #fff !important;
+            transform: scale(1.12);
+            border-color: #174ea6 !important;
+        }
+        /* Buttons */
+        .btn, a.btn, button, input[type="button"], input[type="submit"], a[style*="background:#2d72d9"], a[style*="background: #2d72d9"] {
+            background: #2d72d9 !important;
+            color: #fff !important;
+            border: none;
+            border-radius: 6px;
+            padding: 0.6rem 1.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.18s, color 0.18s;
+            display: inline-block;
+        }
+        .btn:hover, a.btn:hover, button:hover, input[type="button"]:hover, input[type="submit"]:hover, a[style*="background:#2d72d9"]:hover, a[style*="background: #2d72d9"]:hover {
+            background: #174ea6 !important;
+            color: #fff !important;
+        }
+        @media (max-width: 700px) {
+            footer div[style*="display:flex"] {
+                flex-direction: column !important;
+                gap: 1.5rem !important;
+                text-align: left !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header-nav shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="index.html" class="logo-text font-extrabold" style="font-size:1.2rem; color:#2d72d9; text-decoration:none;">Uncommon</a>
+            <ul class="flex space-x-6 sm:space-x-8">
+                <li><a href="index.html" class="font-semibold text-lg hover:underline">Home</a></li>
+                <li><a href="hubs.html" class="font-semibold text-lg hover:underline">Hubs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <section class="hero-section w-full py-16 md:py-24" style="background:#2d72d9;">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-10 md:gap-16">
+                
+                <!-- Left Column: Text Content -->
+                <div class="md:w-3/5 lg:w-1/2 text-center md:text-left">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6" style="color:#fff;">
+                        What is Scratch?
+                    </h1>
+                    <h2 class="text-xl sm:text-2xl font-medium mb-8 opacity-90" style="color:#FFD600;">
+                        Scratch is a fun, free, and beginner-friendly programming language for everyone!
+                    </h2>
+                    <p class="text-lg mb-6 leading-relaxed opacity-85" style="color:#fff;">
+                        Scratch is a visual programming language developed by the Lifelong Kindergarten Group at the MIT Media Lab. It makes it easy for anyone—especially young people aged 8 to 16—to create their own interactive stories, games, and animations. Instead of typing complex code, you snap together colorful programming blocks to build your projects.
+                    </p>
+                    <div class="mt-8 mb-8 text-lg opacity-85" style="color:#fff;">
+                        <p class="font-semibold mb-3">With Scratch, you can:</p>
+                        <ul class="list-disc list-inside space-y-2 pl-4">
+                            <li>Design and share your own interactive games and animations.</li>
+                            <li>Learn fundamental concepts of coding, computational thinking, and logic.</li>
+                            <li>Express your creativity and tell your stories in new ways.</li>
+                            <li>Join a vibrant global community to share, remix, and collaborate on projects.</li>
+                        </ul>
+                    </div>
+                    <p class="text-lg mb-10 leading-relaxed opacity-85" style="color:#fff;">
+                        Scratch is widely used in schools, coding clubs, and homes all over the world. It empowers students to develop crucial 21st-century skills like problem-solving, creativity, systematic reasoning, and collaborative work.
+                    </p>
+                    <a href="https://scratch.mit.edu/projects/editor/?tutorial=getStarted" target="_blank" class="cta-button inline-block py-3 px-8 rounded-lg font-bold text-lg shadow-lg transform hover:scale-105" style="background:#2d72d9; color:#fff;">
+                        Try Scratch Online
+                    </a>
+                </div>
+
+                <!-- Right Column: Image -->
+                <div class="md:w-2/5 lg:w-1/2 mt-10 md:mt-0 flex justify-center md:justify-end">
+                    <img src="images/final pcs on scratch.png" 
+                         alt="Example of the Scratch visual programming interface" 
+                         class="rounded-xl shadow-2xl w-full max-w-md object-cover"
+                         onerror="this.onerror=null; this.src='https://placehold.co/500x550/E0E7FF/4338CA?text=Image+Not+Found&font=inter';">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-start; gap:2rem; padding:2rem 1rem;">
+            <div style="min-width:200px;">
+                <div style="font-weight:bold; font-size:1.2rem; margin-bottom:0.5rem; letter-spacing:1px;">
+                    <span style="color:#2d72d9;">Uncommon</span> Scratch Outreach
+                </div>
+                <div style="margin-bottom:0.5rem; color:#111;">
+                    &copy; 2025 All rights reserved.
+                </div>
+                <a href="mailto:info@uncommon.org" style="color:#2d72d9;text-decoration:underline;">Contact Us</a>
+            </div>
+            <div style="min-width:180px;">
+                <div style="font-weight:600; margin-bottom:0.5rem; color:#111;">Quick Links</div>
+                <a href="index.html" style="color:#2d72d9; text-decoration:none; display:block; margin-bottom:0.2rem; font-weight:600;">Home</a>
+                <a href="hubs.html" style="color:#2d72d9; text-decoration:none; display:block; margin-bottom:0.2rem; font-weight:600;">Hubs</a>
+                <a href="about-scratch.html" style="color:#2d72d9; text-decoration:none; display:block; margin-bottom:0.2rem; font-weight:600;">About Scratch</a>
+                <a href="https://playground.uncommon.org/" target="_blank" style="color:#2d72d9; text-decoration:none; display:block; font-weight:600;">Playground</a>
+            </div>
+            <div style="min-width:180px;">
+                <div style="font-weight:600; margin-bottom:0.5rem; color:#111;">Follow Us</div>
+                <div>
+                    <a href="https://facebook.com/" target="_blank" aria-label="Facebook" class="footer-social-blue">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank" aria-label="Twitter" class="footer-social-blue">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com/" target="_blank" aria-label="Instagram" class="footer-social-blue">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    </footer>
+</body>
+</html>

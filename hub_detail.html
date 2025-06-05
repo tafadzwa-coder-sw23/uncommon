@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uncommon Scratch Outreach - Hub Details</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="logo">
+                <h1>Uncommon</h1>
+                <h2>Scratch Outreach</h2>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="scratch.html">Scratch</a></li>
+                <li><a href="hubs.html" class="active">Hubs</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="stories.html">Stories</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hub-schools" class="hub-detail-section">
+            <div class="container">
+                <h2 id="hub-name"></h2>
+                <div id="school-list" class="school-grid">
+                    </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Uncommon Scratch Outreach is dedicated to providing accessible coding education through Scratch programming. We believe in empowering students to become creators and problem solvers in the digital age.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="scratch.html">Scratch</a></li>
+                    <li><a href="hubs.html">Hubs</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="stories.html">Success Stories</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@uncommonscratch.org</p>
+                <p>Phone: (555) 123-4567</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Uncommon Scratch Outreach. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.mobile-menu').addEventListener('click', () => {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const hubName = urlParams.get('hub');
+            const hubNameElement = document.getElementById('hub-name');
+            const schoolListElement = document.getElementById('school-list');
+
+            if (hubName) {
+                hubNameElement.textContent = `${hubName} Schools`;
+
+                const schoolsData = {
+                    "Mufakose": [
+                        { name: "Gwinyiro Primary", description: "Providing foundational Scratch lessons." },
+                        { name: "Aspindale Primary", description: "Engaging students with interactive coding projects." },
+                        { name: "Mufakose 1 High School", description: "Advanced Scratch concepts for high schoolers." }
+                    ],
+                    "Mbare": [
+                        { name: "George Stark Primary", description: "Building creative coding skills in Mbare." },
+                        { name: "Stodart Primary", description: "Nurturing young programmers." }
+                    ],
+                    "Dzivarasekwa": [
+                        { name: "Dzivarasekwa 1 Primary", description: "Introducing coding to primary school students." },
+                        { name: "Dzivarasekwa 2 Primary", description: "Developing problem-solving through Scratch." }
+                    ],
+                    "Kuwadzana": [
+                        { name: "Kuwadzana 1 Primary", description: "Fun and educational Scratch classes." },
+                        { name: "Kuwadzana High School", description: "Empowering high school students with coding." }
+                    ],
+                    "Bulawayo": [
+                        { name: "Mzilikazi Primary", description: "Pioneering Scratch education in Bulawayo." },
+                        { name: "Induba Primary", description: "Inspiring creativity through programming." }
+                    ]
+                };
+
+                const schools = schoolsData[hubName] || [];
+
+                if (schools.length > 0) {
+                    schools.forEach(school => {
+                        const schoolCard = document.createElement('div');
+                        schoolCard.classList.add('school-card');
+                        schoolCard.innerHTML = `
+                            <a href="school_detail.html?hub=${hubName}&school=${encodeURIComponent(school.name)}">
+                                <i class="fas fa-school"></i>
+                                <h3>${school.name}</h3>
+                                <p>${school.description}</p>
+                            </a>
+                        `;
+                        schoolListElement.appendChild(schoolCard);
+                    });
+                } else {
+                    schoolListElement.innerHTML = `<p>No schools found for ${hubName} Hub yet.</p>`;
+                }
+
+            } else {
+                hubNameElement.textContent = "Hub Not Found";
+                schoolListElement.innerHTML = `<p>Please select a hub from the <a href="hubs.html">Hubs page</a>.</p>`;
+            }
+        });
+    </script>
+</body>
+</html>
